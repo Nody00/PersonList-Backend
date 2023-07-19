@@ -22,6 +22,8 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, error: true });
 });
 
+console.log(process.env.MONGO_CONNECT);
+
 mongoose
   .connect(process.env.MONGO_CONNECT)
   .then((result) => {
