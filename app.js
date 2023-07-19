@@ -23,10 +23,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(
-    process.env.MONGO_CONNECT ||
-      "mongodb+srv://dinokrcic2077:WIE5ZiNdPBLW0QKL@cluster0.p4qnyoc.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_CONNECT)
   .then((result) => {
     app.listen(process.env.PORT || 8080);
   })
